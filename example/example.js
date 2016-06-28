@@ -387,7 +387,7 @@ let localStorageActions = [
   {
     name: 'localStorage_set_todos',
     action({store, mobx}, key) {
-      var todos = mobx.toJSON(store.todos);
+      var todos = mobx.toJS(store.todos);
       localStorage.setItem(key, JSON.stringify(todos));
     }
   }
@@ -399,7 +399,7 @@ FF.registerActions(localStorageActions);
 // Make sure to check for todos in the localStorage before autorunning our localStorage_set_todos dispatch function.
 FF.dispatch('localStorage_init_todos', key).then(() => {
   // Run the localStorage_set_todos action anytime an observable inside that action changes.
-  // In this case the todos array. --- var todos = mobx.toJSON(store.todos);
+  // In this case the todos array. --- var todos = mobx.toJS(store.todos);
   FF.mobx.autorun(() => FF.dispatch('localStorage_set_todos', key) );
 });
 
