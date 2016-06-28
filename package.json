@@ -1,0 +1,42 @@
+{
+  "name": "fauxflux-react",
+  "version": "0.1.0",
+  "description": "React bindings for FauxFlux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:umd": "webpack src/index.js index.js && webpack example/example.js example/bundle.js --config webpack.config.example.js",
+    "build:umd:min": "NODE_ENV=production webpack src/index.js dist/fauxflux.min.js",
+    "build": "npm run build:umd",
+    "example": "webpack -w example/example.js example/bundle.js --config webpack.config.example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FauxFlux/fauxflux-react.git"
+  },
+  "keywords": [
+    "FauxFlux",
+    "React"
+  ],
+  "author": "Morgan Kartchner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FauxFlux/fauxflux-react/issues"
+  },
+  "homepage": "https://github.com/FauxFlux/fauxflux-react#readme",
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.5.0",
+    "fauxflux": "0.1.0",
+    "mobx": "^2.1.1",
+    "mobx-react": "^3.0.3",
+    "mobx-react-devtools": "^4.0.2",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "webpack": "^1.12.11"
+  }
+}
