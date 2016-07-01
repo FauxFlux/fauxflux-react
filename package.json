@@ -1,6 +1,6 @@
 {
   "name": "fauxflux-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React bindings for FauxFlux",
   "main": "index.js",
   "scripts": {
