@@ -70,11 +70,9 @@ var webpackConfig = {
 
 if('native' === process.env.TYPE) {
   webpackConfig.externals = {
-    "react": reactNativeExternal,
-    // "react-native": reactNativeExternal,
+    "react": reactExternal,
     "mobx": mobxExternal,
     "mobx-react": mobxReactNativeExternal
-    // "mobx-react/native": mobxReactNativeExternal
   }
 }
 

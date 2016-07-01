@@ -1,12 +1,12 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react-native"), require("mobx-react/native"));
+		module.exports = factory(require("react"), require("mobx-react/native"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react-native", "mobx-react/native"], factory);
+		define(["react", "mobx-react/native"], factory);
 	else if(typeof exports === 'object')
-		exports["fauxfluxReact"] = factory(require("react-native"), require("mobx-react/native"));
+		exports["fauxfluxReact"] = factory(require("react"), require("mobx-react/native"));
 	else
-		root["fauxfluxReact"] = factory(root["ReactNative"], root["mobxReactNative"]);
+		root["fauxfluxReact"] = factory(root["React"], root["mobxReactNative"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_5__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
