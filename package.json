@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:umd": "webpack src/index.js index.js && webpack example/example.js example/bundle.js --config webpack.config.example.js",
+    "build:native": "TYPE=native webpack src/index.js native.js",
     "build:umd:min": "NODE_ENV=production webpack src/index.js dist/fauxflux.min.js",
-    "build": "npm run build:umd",
+    "build": "npm run build:umd; npm run build:native",
     "example": "webpack -w example/example.js example/bundle.js --config webpack.config.example.js"
   },
   "repository": {

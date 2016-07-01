@@ -68,6 +68,16 @@ var webpackConfig = {
   plugins: []
 };
 
+if('native' === process.env.TYPE) {
+  webpackConfig.externals = {
+    "react": reactNativeExternal,
+    // "react-native": reactNativeExternal,
+    "mobx": mobxExternal,
+    "mobx-react": mobxReactNativeExternal
+    // "mobx-react/native": mobxReactNativeExternal
+  }
+}
+
 if('production' === process.env.NODE_ENV){
   // replace 'NODE_ENV' variable in the code with 'production'.
   // This will be use for dead code elimination in the minification step below.
