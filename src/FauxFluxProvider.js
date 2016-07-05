@@ -14,7 +14,8 @@ class FauxFluxProvider extends React.Component {
     return {
       ff: {
         store: this.props.FF.store,
-        dispatch: this.props.FF.dispatch
+        dispatch: this.props.FF.dispatch,
+        mobx: this.props.FF.mobx
       }
     }
   }

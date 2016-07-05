@@ -118,7 +118,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return {
 	        ff: {
 	          store: this.props.FF.store,
-	          dispatch: this.props.FF.dispatch
+	          dispatch: this.props.FF.dispatch,
+	          mobx: this.props.FF.mobx
 	        }
 	      };
 	    }
@@ -189,6 +190,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  NewObservedComponent.prototype.componentWillMount = function componentWillMount() {
 	    this.store = this.context.ff.store;
 	    this.dispatch = this.context.ff.dispatch;
+	    this.mobx = this.context.ff.mobx;
 	    originalComponentWillMount.apply(this, arguments);
 	  };
 	  // Declare the fauxflux (ff) context on this component so we can use it throughout the methods

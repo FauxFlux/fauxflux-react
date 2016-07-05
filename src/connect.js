@@ -14,6 +14,7 @@ function connect(Component) {
   NewObservedComponent.prototype.componentWillMount = function componentWillMount() {
     this.store = this.context.ff.store;
     this.dispatch = this.context.ff.dispatch;
+    this.mobx = this.context.ff.mobx;
     originalComponentWillMount.apply(this, arguments);
   };
   // Declare the fauxflux (ff) context on this component so we can use it throughout the methods
