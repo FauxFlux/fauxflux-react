@@ -23821,7 +23821,8 @@
 					// Declare the fauxflux (ff) context on this component so we can use it throughout the methods
 					// like the componentWillMount method we monkey patch above. Extend it with the components original contextTypes.
 					var originalContextTypes = NewObservedComponent.contextTypes || {};
-					NewObservedComponent.contextTypes = Object.assign(originalContextTypes, _defaultContextTypes2.default);
+					originalContextTypes.ff = _defaultContextTypes2.default.ff;
+					NewObservedComponent.contextTypes = originalContextTypes;
 					// Return the niffty new component.
 					return NewObservedComponent;
 				};

@@ -20,7 +20,8 @@ function connect(Component) {
   // Declare the fauxflux (ff) context on this component so we can use it throughout the methods
   // like the componentWillMount method we monkey patch above. Extend it with the components original contextTypes.
   let originalContextTypes = NewObservedComponent.contextTypes || {};
-  NewObservedComponent.contextTypes = Object.assign(originalContextTypes, defaultContextTypes);
+  originalContextTypes.ff = defaultContextTypes.ff;
+  NewObservedComponent.contextTypes = originalContextTypes;
   // Return the niffty new component.
   return NewObservedComponent;
 };
