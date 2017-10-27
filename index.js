@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("mobx-react"));
+		module.exports = factory(require("react"), require("prop-types"), require("mobx-react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "mobx-react"], factory);
+		define(["react", "prop-types", "mobx-react"], factory);
 	else if(typeof exports === 'object')
-		exports["fauxfluxReact"] = factory(require("react"), require("mobx-react"));
+		exports["fauxfluxReact"] = factory(require("react"), require("prop-types"), require("mobx-react"));
 	else
-		root["fauxfluxReact"] = factory(root["React"], root["mobxReact"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_5__) {
+		root["fauxfluxReact"] = factory(root["React"], root["PropTypes"], root["mobxReact"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_6__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -52,7 +52,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -65,7 +65,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _FauxFluxProvider2 = _interopRequireDefault(_FauxFluxProvider);
 
-	var _connect = __webpack_require__(4);
+	var _connect = __webpack_require__(5);
 
 	var _connect2 = _interopRequireDefault(_connect);
 
@@ -74,9 +74,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.FauxFluxProvider = _FauxFluxProvider2.default;
 	exports.connect = _connect2.default;
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -91,7 +91,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _defaultContextTypes = __webpack_require__(3);
+	var _propTypes = __webpack_require__(3);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _defaultContextTypes = __webpack_require__(4);
 
 	var _defaultContextTypes2 = _interopRequireDefault(_defaultContextTypes);
 
@@ -109,7 +113,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function FauxFluxProvider(props) {
 	    _classCallCheck(this, FauxFluxProvider);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(FauxFluxProvider).call(this, props));
+	    return _possibleConstructorReturn(this, (FauxFluxProvider.__proto__ || Object.getPrototypeOf(FauxFluxProvider)).call(this, props));
 	  }
 
 	  _createClass(FauxFluxProvider, [{
@@ -136,21 +140,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	FauxFluxProvider.childContextTypes = _defaultContextTypes2.default;
 
 	FauxFluxProvider.propTypes = {
-	  children: _react2.default.PropTypes.element.isRequired,
-	  FF: _react2.default.PropTypes.object.isRequired // The FauxFlux singleton.
+	  children: _propTypes2.default.element.isRequired,
+	  FF: _propTypes2.default.object.isRequired // The FauxFlux singleton.
 	};
 
 	exports.default = FauxFluxProvider;
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
 
 	"use strict";
 
@@ -161,9 +171,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  ff: function ff() {}
 	};
 
-/***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -172,9 +182,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = undefined;
 
-	var _mobxReact = __webpack_require__(5);
+	var _mobxReact = __webpack_require__(6);
 
-	var _defaultContextTypes = __webpack_require__(3);
+	var _defaultContextTypes = __webpack_require__(4);
 
 	var _defaultContextTypes2 = _interopRequireDefault(_defaultContextTypes);
 
@@ -204,13 +214,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.default = connect;
 
-/***/ },
-/* 5 */
-/***/ function(module, exports) {
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_5__;
+	module.exports = __WEBPACK_EXTERNAL_MODULE_6__;
 
-/***/ }
+/***/ })
 /******/ ])
 });
 ;

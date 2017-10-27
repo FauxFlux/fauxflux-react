@@ -35,6 +35,13 @@ var mobxReactNativeExternal = {
   amd: 'mobx-react/native'
 };
 
+var proptypesExternal = {
+  root: 'PropTypes',
+  commonjs2: 'prop-types',
+  commonjs: 'prop-types',
+  amd: 'prop-types'
+};
+
 var webpackConfig = {
   output: {
     library: 'fauxfluxReact',
@@ -60,7 +67,8 @@ var webpackConfig = {
     "react-native": reactNativeExternal,
     "mobx": mobxExternal,
     "mobx-react": mobxReactExternal,
-    "mobx-react/native": mobxReactNativeExternal
+    "mobx-react/native": mobxReactNativeExternal,
+    "prop-types": proptypesExternal
   },
   resolve: {
     extensions: ['', '.js']
@@ -72,7 +80,8 @@ if('native' === process.env.TYPE) {
   webpackConfig.externals = {
     "react": reactExternal,
     "mobx": mobxExternal,
-    "mobx-react": mobxReactNativeExternal
+    "mobx-react": mobxReactNativeExternal,
+    "prop-types": proptypesExternal
   }
 }
 
