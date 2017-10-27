@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import defaultContextTypes from './defaultContextTypes';
 
 
@@ -29,8 +30,8 @@ class FauxFluxProvider extends React.Component {
 FauxFluxProvider.childContextTypes = defaultContextTypes;
 
 FauxFluxProvider.propTypes = {
-  children: React.PropTypes.element.isRequired,
-  FF: React.PropTypes.object.isRequired // The FauxFlux singleton.
+  children: PropTypes.element.isRequired,
+  FF: PropTypes.object.isRequired // The FauxFlux singleton.
 };
 
 export { FauxFluxProvider as default };
